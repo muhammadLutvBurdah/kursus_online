@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard.home');
 });
+
 
 // Rute CRUD untuk Kursus
 use App\Http\Controllers\kursusController;
