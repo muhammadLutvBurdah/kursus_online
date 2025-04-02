@@ -13,8 +13,10 @@ class kursusController extends Controller
      */
     public function index()
     {
-        $kursus = kursus::all();
+
+        $kursus = kursus::orderBy('created_at', 'DESC')->get();
         return view('kursus.index', compact('kursus'));
+
     }
 
     /**

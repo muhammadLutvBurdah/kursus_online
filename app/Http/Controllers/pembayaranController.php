@@ -15,7 +15,7 @@ class pembayaranController extends Controller
      */
     public function index()
     {
-        $pembayaran = pembayaran::with('kursus')->get();
+        $pembayaran = pembayaran::orderBy('created_at', 'DESC')->get();
         return view('pembayaran.index', compact('pembayaran'));
     }
 

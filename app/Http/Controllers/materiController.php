@@ -16,7 +16,7 @@ class materiController extends Controller
      */
     public function index()
     {
-        $materi = materi::with('kursus')->get();
+        $materi = materi::orderBy('created_at', 'DESC')->get();
         return view('materi.index', compact('materi'));
     }
 

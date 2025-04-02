@@ -13,9 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard.home');
-});
+use App\Http\Controllers\dashboardController;
+
+// Rute untuk halaman utama
+Route::get('/', [dashboardController::class, 'index'])->name('home');
+
+// Rute untuk dashboard
+Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
+
+
 
 
 // Rute CRUD untuk Kursus

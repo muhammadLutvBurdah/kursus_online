@@ -50,7 +50,7 @@
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="text-center">
+                                    <tbody>
                                         @foreach($pembayaran as $key => $m)
                                             <tr>
                                                 <td class="text-center">{{ $key + 1 }}</td>

@@ -43,10 +43,10 @@
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="text-center">
+                                    <tbody>
                                         @foreach($kursus as $key => $k)
                                             <tr>
-                                                <td>{{ $key + 1 }}</td>
+                                                <td class="text-center">{{ $key + 1 }}</td>
                                                 <td>{{ $k->nama }}</td>
                                                 <td>{{ $k->deskripsi ?? '-' }}</td>
                                                 <td>Rp{{ number_format($k->harga, 2) }}</td>
