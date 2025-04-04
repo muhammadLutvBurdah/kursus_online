@@ -28,8 +28,9 @@ class kursus extends Model
         return $this->hasMany(pembayaran::class, 'kursusid', 'kursusid');
     }
 
-    public function penggunaKursus()
+    public function kursus()
     {
         return $this->hasMany(KursusPengguna::class, 'kursusid');
     }
+
 }

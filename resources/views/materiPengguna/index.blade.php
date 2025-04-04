@@ -25,6 +25,20 @@
             </div>
             <!-- [ breadcrumb ] end -->
 
+            <form action="{{ route('materiPengguna.index') }}" method="GET" class="mb-4">
+                <div class="input-group">
+                    <select name="kursusid" class="form-control">
+                        <option value="">-- Pilih Kategori Kursus --</option>
+                        @foreach($kursusPengguna as $kursus)
+                            <option value="{{ $kursus->kursusid }}" {{ request('kursusid') == $kursus->kursusid ? 'selected' : '' }}>
+                                {{ $kursus->nama }}
+                            </option>
+                        @endforeach
+                    </select>
+                    <button type="submit" class="btn btn-primary">Cari</button>
+                </div>
+            </form>
+
             <!-- [ Main Content ] start -->
             <div class="container mt-4">
                 @if(session('success'))
@@ -40,8 +54,10 @@
                                     <p class="card-text flex-grow-1">{{ $m->deskripsi }}</p>
                                     <p class="card-text"><strong>Durasi:</strong> {{ $m->durasi }}</p>
                                     <div class="mt-auto">
-                                        <a href="{{ route('pembayaran.create', $m->pembayaranid) }}" class="btn btn-success btn-sm">Bayar</a>
-                                        <a href="{{ route('kursusPengguna.index', $m->kursusid) }}" class="btn btn-secondary btn-sm">Kembali</a>
+                                        <a href="{{ route('pembayaran.create', $m->pembayaranid) }}"
+                                            class="btn btn-success btn-sm">Bayar</a>
+                                        <a href="{{ route('kursusPengguna.index', $m->kursusid) }}"
+                                            class="btn btn-secondary btn-sm">Kembali</a>
                                     </div>
                                 </div>
                             </div>

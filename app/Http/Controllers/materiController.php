@@ -16,14 +16,9 @@ class materiController extends Controller
      */
     public function index()
     {
-         // Ambil data kursus berdasarkan ID
-    $kursus = Kursus::where('materiid', $id)->firstOrFail();
-
-    // Ambil semua materi yang terkait dengan kursus tersebut
-    $materi = Materi::where('kursus_id', $kursus->id)->get();
-
-    // Tampilkan view dengan data kursus dan materi
-    return view('materi.index', compact('kursus', 'materi'));
+        $materi = materi::orderBy('created_at', 'DESC')->get();
+        $kursus = kursus::orderBy('created_at', 'DESC')->get();
+        return view('materi.index', compact('materi', 'kursus'));
     }
 
     /**

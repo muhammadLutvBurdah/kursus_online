@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\kursusPengguna;
 use App\materiPengguna;
 class materiPenggunaController extends Controller
 {
@@ -11,10 +12,17 @@ class materiPenggunaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $materiPengguna = materiPengguna::orderBy('created_at', 'DESC')->get();
-        return view('materiPengguna.index', compact('materiPengguna'));
+        // Ambil daftar kursus dengan relasi yang benar
+        $kursusPengguna = KursusPengguna::all();
+
+        // Ambil daftar materi dengan filter kursus (jika ada)
+        $materiPengguna = MateriPengguna::when($request->kursusid, function ($query) use ($request) {
+            return $query->where('kursusid', $request->kursusid);
+        })->orderBy('created_at', 'desc')->paginate(10);
+
+        return view('materiPengguna.index', compact('materiPengguna', 'kursusPengguna'));
     }
 
     /**
