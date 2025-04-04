@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class kursus extends Model
+class kursusPengguna extends Model
 {
     protected $table = 'kursus';
     protected $primaryKey = 'kursusid';
@@ -28,8 +28,8 @@ class kursus extends Model
         return $this->hasMany(pembayaran::class, 'kursusid', 'kursusid');
     }
 
-    public function penggunaKursus()
+    public function kursus()
     {
-        return $this->hasMany(KursusPengguna::class, 'kursusid');
+        return $this->belongsTo(kursus::class, 'kursusid');
     }
 }

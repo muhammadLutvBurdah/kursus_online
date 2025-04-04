@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class materi extends Model
+class materiPengguna extends Model
 {
     protected $table = 'materi';
     protected $primaryKey = 'materiid';
@@ -20,6 +20,4 @@ class materi extends Model
     {
         return $this->belongsTo(kursus::class, 'kursusid', 'kursusid');
     }
-
-    
 }

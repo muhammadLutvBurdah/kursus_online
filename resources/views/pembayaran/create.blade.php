@@ -17,7 +17,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="page-header-title">
-                                <h2 class="mb-0">Tambah Pembayaran</h2>
+                                <h2 class="mb-0">Pembayaran</h2>
                             </div>
                         </div>
                     </div>
@@ -80,7 +80,7 @@
                                                 </div>
 
                                                 <button type="submit" class="btn btn-primary">Simpan</button>
-                                                <a href="{{ route('pembayaran.index') }}" class="btn btn-secondary">Batal</a>
+                                                <a href="{{ route('materiPengguna.index') }}" class="btn btn-secondary">Batal</a>
                                             </form>
                                         </div>
                                     </body>

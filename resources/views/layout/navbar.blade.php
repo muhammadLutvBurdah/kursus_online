@@ -14,9 +14,8 @@
             <span class="pc-mtext">Dashboard</span>
           </a>
         </li>
-
         <li class="pc-item pc-caption">
-          <label>Tabel</label>
+          <label>Admin</label>
           <i class="ti ti-dashboard"></i>
         </li>
         <li class="pc-item">
@@ -35,6 +34,16 @@
           <a href="{{ route('pembayaran.index') }}" class="pc-link">
             <span class="pc-micon"><i class="ti ti-plant-2"></i></span>
             <span class="pc-mtext">Pembayaran</span>
+          </a>
+        </li>
+        <li class="pc-item pc-caption">
+          <label>Pengguna</label>
+          <i class="ti ti-dashboard"></i>
+        </li>
+        <li class="pc-item">
+          <a href="{{ route('kursusPengguna.index') }}" class="pc-link">
+            <span class="pc-micon"><i class="ti ti-plant-2"></i></span>
+            <span class="pc-mtext">Kursus Pengguna</span>
           </a>
         </li>
       </ul>

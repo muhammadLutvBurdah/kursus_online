@@ -56,4 +56,10 @@ Route::delete('/pembayaran/{pembayaran}', [pembayaranController::class, 'destroy
 Route::get('/pembayaran/{pembayaran}', [pembayaranController::class, 'show'])->name('pembayaran.show');
 
 
+use App\Http\Controllers\kursusPenggunaController;
+Route::get('/kursusPengguna', [kursusPenggunaController::class, 'index'])->name('kursusPengguna.index');
 
+use App\Http\Controllers\materiPenggunaController;
+Route::get('/materiPengguna', [materiPenggunaController::class, 'index'])->name('materiPengguna.index');
+
+// Route::get('/materi/{id}', [MateriPenggunaController::class, 'index'])->name('materiPengguna.index');

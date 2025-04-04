@@ -47,7 +47,7 @@ class pembayaranController extends Controller
 
         pembayaran::create($request->all());
 
-        return redirect()->route('pembayaran.index')->with('success', 'Pembayaran berhasil ditambahkan!');
+        return redirect()->route('pembayaran.index')->with('success', 'Pembayaran berhasil!');
     }
 
     /**

@@ -32,8 +32,7 @@
                     <div class="card">
                         <div class="card-body table-border-style">
                             <div class="table-responsive">
-                                <a href="{{ route('pembayaran.create') }}" class="btn btn-primary mb-3">Tambah
-                                    pembayaran</a>
+                                <!-- <a href="{{ route('pembayaran.create') }}" class="btn btn-primary mb-3">Tambah pembayaran</a> -->
 
                                 @if(session('success'))
                                     <div class="alert alert-success">{{ session('success') }}</div>
@@ -59,8 +58,7 @@
                                                 <td>{{ $m->tanggal_tf }}</td>
                                                 <td>Rp {{ number_format($m->jumlah_pembayaran, 0, ',', '.') }}</td>
                                                 <td>
-                                                    <a href="{{ route('pembayaran.edit', $m->pembayaranid) }}"
-                                                        class="btn btn-warning btn-sm">Edit</a>
+                                                    <!-- <a href="{{ route('pembayaran.edit', $m->pembayaranid) }}"class="btn btn-warning btn-sm">Edit</a> -->
 
                                                     <form action="{{ route('pembayaran.destroy', $m->pembayaranid) }}"
                                                         method="POST" style="display:inline;">
