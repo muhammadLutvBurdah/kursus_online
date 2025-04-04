@@ -30,7 +30,18 @@
                   <span class="pc-mtext">Kursus</span>
               </a>
           </li>
-          <!-- dan seterusnya... -->
+          <li class="pc-item">
+            <a href="{{ route('materi.index') }}" class="pc-link">
+                <span class="pc-micon"><i class="ti ti-typography"></i></span>
+                <span class="pc-mtext">Materi</span>
+            </a>
+        </li>
+        <li class="pc-item">
+            <a href="{{ route('pembayaran.index') }}" class="pc-link">
+                <span class="pc-micon"><i class="ti ti-typography"></i></span>
+                <span class="pc-mtext">Pembayaran</span>
+            </a>
+        </li>
 
       @else
           <li class="pc-item pc-caption">
